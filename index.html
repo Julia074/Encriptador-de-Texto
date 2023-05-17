@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+    <title>Challenge One 5</title>
+</head>
+<body>
+    <header>
+        <img src="imagenes/Logo.png" alt="logo Alura" class="logo">
+        <h1>Encripta un texto</h1>
+    </header>
+    <main>
+        <section class="section1">
+            <textarea  cols="30" rows="10"  placeholder="ingresa un texto aqui" class="ingreso-texto"></textarea>
+            <p>solo minusculas y sin acentos</p>
+            <div class="botones">
+                <button class="boton-encriptar" onclick="botonEncriptar">Encriptar</button>
+                <button class="boton-desencriptar">Desencriptar</button>
+            </div>
+
+        </section>
+        <section class="section2">
+            <textarea  cols="30" rows="10" class="salida-texto " ></textarea>
+            
+            <div class="texto-no-encontrado">
+                <h4>No se encontro ningun mensaje</h4> 
+                <p>ingresa el texto que deseas encriptar o desencriptar<p>             
+            </div>
+            <div class="copiar">
+                <button class="boton-copiar"> Copiar</button>
+           </div>
+        </section>
+    </main>
+
+</body>
+</html>
