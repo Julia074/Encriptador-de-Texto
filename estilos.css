@@ -105,7 +105,12 @@ button{
         background-position: center;
         background-size: contain;
         border: none;
+        font-weight: bold; 
+        font-size: 1.5em;
+        font-family: 'Merienda', cursive;
+        color: #0A3871;
     }
+        
         .salida-texto:focus{
             outline: none;
         }
@@ -120,6 +125,7 @@ button{
     .copiar{
         display: flex;
         justify-content:  center ;
+        
                 
     }
     .boton-copiar{

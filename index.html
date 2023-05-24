@@ -17,26 +17,26 @@
     </header>
     <main>
         <section class="section1">
-            <textarea  cols="30" rows="10"  placeholder="ingresa un texto aqui" class="ingreso-texto"></textarea>
+            <textarea  cols="30" rows="10" placeholder="ingresa un texto aqui" class="ingreso-texto" autofocus oninput="soloMinusculas()"></textarea>
             <p>solo minusculas y sin acentos</p>
             <div class="botones">
-                <button class="boton-encriptar" onclick="botonEncriptar">Encriptar</button>
-                <button class="boton-desencriptar">Desencriptar</button>
+                <button class="boton-encriptar" onclick="botonEncriptar()">Encriptar</button>
+                <button class="boton-desencriptar" onclick=" botonDesncriptar()">Desencriptar</button>
             </div>
 
         </section>
         <section class="section2">
-            <textarea  cols="30" rows="10" class="salida-texto " ></textarea>
+            <textarea  cols="30" rows="10" class="salida-texto " disabled ></textarea>
             
             <div class="texto-no-encontrado">
                 <h4>No se encontro ningun mensaje</h4> 
                 <p>ingresa el texto que deseas encriptar o desencriptar<p>             
             </div>
             <div class="copiar">
-                <button class="boton-copiar"> Copiar</button>
+                <button class="boton-copiar" onclick="copiar() "> Copiar</button>
            </div>
         </section>
     </main>
-
+    <script src="script.js"></script>
 </body>
 </html>
