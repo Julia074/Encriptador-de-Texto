@@ -3,22 +3,30 @@ const textArea = document.querySelector(".ingreso-texto");
 const mensaje = document.querySelector(".salida-texto");
 const textoNoEncontrado = document.querySelector(".texto-no-encontrado");
 const divCopiar = document.querySelector(".copiar");
-const botonCopiar = document.querySelector(".boton-copiar")
 
 divCopiar.style.display = "none"
 
 
-function botonEncriptar(){
-    
-    const textoEncriptado = encriptar(textArea.value);
-    mensaje.value = textoEncriptado;
-    textArea.value = " ";
-    mensaje.style.backgroundImage = "none"
-    textoNoEncontrado.style.display = "none" 
-    divCopiar.style.display = ""
 
+
+function botonEncriptar() {
+    const regex = /[A-ZÁÉÍÓÚÜÑ]|[^\w\s]/;
   
-}
+    if (textArea.value === null || textArea.value === '') {
+      alert("Ingrese un texto");
+    }
+    if (regex.test(textArea.value)) {
+      alert("El texto contiene letras mayúsculas o acentos/símbolos especiales.");
+    } else {
+      const textoEncriptado = encriptar(textArea.value);
+      mensaje.value = textoEncriptado;
+      textArea.value = " ";
+      mensaje.style.backgroundImage = "none";
+      textoNoEncontrado.style.display = "none";
+      divCopiar.style.display = "";
+    }
+  }
+  
 
 
 
@@ -37,13 +45,22 @@ return textoEncriptado
 }
 
 function botonDesncriptar(){
+    const regex = /[A-ZÁÉÍÓÚÜÑ]|[^\w\s]/;
+  
+    if (textArea.value === null || textArea.value === '') {
+      alert("Ingrese un texto");
+    }
+    if (regex.test(textArea.value)) {
+      alert("El texto contiene letras mayúsculas o acentos/símbolos especiales.");
+    }
+    else{
     const textoDesncriptado =  desencriptar(textArea.value);
     mensaje.value = textoDesncriptado;
     textArea.value = "";
     mensaje.style.backgroundImage = "none"
     textoNoEncontrado.style.display = "none"
     divCopiar.style.display = "" 
-   
+    }
 }
 function desencriptar(textoDesncriptado){
     let  matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]]
@@ -57,9 +74,10 @@ function desencriptar(textoDesncriptado){
     
     }
     return textoDesncriptado
-      
+
 }
 
 function copiar(){
     navigator.clipboard.writeText(mensaje.value)
+    alert("se ha copiado")
 }
